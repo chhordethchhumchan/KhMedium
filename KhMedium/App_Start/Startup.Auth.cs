@@ -1,11 +1,14 @@
 ﻿using System;
+using AutoMapper;
+using KhMedium.Entities;
+using KhMedium.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using KhMedium.Models;
+using Author = KhMedium.Entities.Author;
 
 namespace KhMedium
 {
@@ -30,11 +33,12 @@ namespace KhMedium
                 {
                     // Enables the application to validate the security stamp when the user logs in.
                     // This is a security feature which is used when you change a password or add an external login to your account.  
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
-                        validateInterval: TimeSpan.FromMinutes(30),
-                        regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
+                    OnValidateIdentity = SecurityStampValidator
+                        .OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
+                            validateInterval: TimeSpan.FromMinutes(30),
+                            regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -63,6 +67,48 @@ namespace KhMedium
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<ArticleModel, Article>();
+                cfg.CreateMap<Article, ArticleModel>();
+
+                cfg.CreateMap<ArticleTagModel, ArticleTag>();
+                cfg.CreateMap<ArticleTag, ArticleTagModel>();
+
+                cfg.CreateMap<AuthorModel, Author>();
+                cfg.CreateMap<Author, AuthorModel>();
+
+                cfg.CreateMap<BookmarkModel, Bookmark>();
+                cfg.CreateMap<Bookmark, BookmarkModel>();
+
+                cfg.CreateMap<CategoryModel, Category>();
+                cfg.CreateMap<Category, CategoryModel>();
+
+                cfg.CreateMap<ClapModel, Clap>();
+                cfg.CreateMap<Clap, ClapModel>();
+
+                cfg.CreateMap<CommentModel, Comment>();
+                cfg.CreateMap<Comment, CommentModel>();
+
+                cfg.CreateMap<FollowerModel, Follower>();
+                cfg.CreateMap<Follower, FollowerModel>();
+
+                cfg.CreateMap<FollowingModel, Following>();
+                cfg.CreateMap<Following, FollowingModel>();
+
+                cfg.CreateMap<PublicationModel, Publication>();
+                cfg.CreateMap<Publication, PublicationModel>();
+
+                cfg.CreateMap<ShareModel, Share>();
+                cfg.CreateMap<Share, ShareModel>();
+
+                cfg.CreateMap<TagModel, Tag>();
+                cfg.CreateMap<Tag, TagModel>();
+
+                cfg.CreateMap<TopicModel, Topic>();
+                cfg.CreateMap<Topic, TopicModel>();
+            });
         }
     }
 }

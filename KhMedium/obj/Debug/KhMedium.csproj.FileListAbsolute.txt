@@ -1,3 +1,4 @@
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\ApplicationInsights.config
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csc.exe
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\roslyn\csc.exe.config
@@ -29,6 +30,7 @@ C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedi
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedium.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\KhMedium.pdb
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Antlr3.Runtime.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\AutoMapper.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\EntityFramework.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\EntityFramework.SqlServer.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.Agent.Intercept.dll
@@ -54,6 +56,7 @@ C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Micros
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Newtonsoft.Json.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Owin.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.ValueTuple.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Helpers.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Mvc.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Optimization.dll
@@ -62,7 +65,10 @@ C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.WebPages.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.WebPages.Razor.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\WebGrease.dll
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\AutoMapper.pdb
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\AutoMapper.xml
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.ValueTuple.xml
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Helpers.xml
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Mvc.xml
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\System.Web.Optimization.xml
@@ -93,4 +99,3 @@ C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Micros
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\bin\Microsoft.AI.Web.xml
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.dll
 C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.pdb
-C:\Users\user\Documents\Visual Studio 2017\Projects\KhMedium\KhMedium\obj\Debug\KhMedium.csprojResolveAssemblyReference.cache

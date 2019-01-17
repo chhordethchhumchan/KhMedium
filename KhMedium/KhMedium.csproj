@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -56,6 +59,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -199,7 +205,36 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Data\AuthorRepository.cs" />
+    <Compile Include="Data\Core\IArticleRepository.cs" />
+    <Compile Include="Data\Core\IArticleTagRepository.cs" />
+    <Compile Include="Data\Core\IAuthorRepository.cs" />
+    <Compile Include="Data\Core\IBookmarkRepository.cs" />
+    <Compile Include="Data\Core\ICategoryRepository.cs" />
+    <Compile Include="Data\Core\IClapRepository.cs" />
+    <Compile Include="Data\Core\ICommentRepository.cs" />
+    <Compile Include="Data\Core\IFollowerRepository.cs" />
+    <Compile Include="Data\Core\IFollowingRepository.cs" />
+    <Compile Include="Data\Core\IPublicationRepository.cs" />
+    <Compile Include="Data\Core\IRepository.cs" />
+    <Compile Include="Data\Core\IShareRepository.cs" />
+    <Compile Include="Data\Core\ITagRepository.cs" />
+    <Compile Include="Data\Core\ITopicRepository.cs" />
+    <Compile Include="Data\Core\IUnitOfWork.cs" />
+    <Compile Include="Data\ArticleRepository.cs" />
+    <Compile Include="Data\ArticleTagRepository.cs" />
+    <Compile Include="Data\BookmarkRepository.cs" />
+    <Compile Include="Data\CategoryRepository.cs" />
+    <Compile Include="Data\ClapRepository.cs" />
+    <Compile Include="Data\CommentRepository.cs" />
+    <Compile Include="Data\FollowerRepository.cs" />
+    <Compile Include="Data\FollowingRepository.cs" />
+    <Compile Include="Data\PublicationRepository.cs" />
+    <Compile Include="Data\ShareRepository.cs" />
+    <Compile Include="Data\TagRepository.cs" />
+    <Compile Include="Data\TopicRepository.cs" />
     <Compile Include="Data\Repository.cs" />
+    <Compile Include="Data\UnitOfWork.cs" />
     <Compile Include="Entities\Article.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
@@ -275,19 +310,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Article.cs" />
-    <Compile Include="Models\ArticleTag.cs" />
-    <Compile Include="Models\Author.cs" />
-    <Compile Include="Models\Bookmark.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Clap.cs" />
-    <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\Follower.cs" />
-    <Compile Include="Models\Following.cs" />
-    <Compile Include="Models\Publication.cs" />
-    <Compile Include="Models\Share.cs" />
-    <Compile Include="Models\Tag.cs" />
-    <Compile Include="Models\Topic.cs" />
+    <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\ArticleTagModel.cs" />
+    <Compile Include="Models\AuthorModel.cs" />
+    <Compile Include="Models\BookmarkModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\ClapModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
+    <Compile Include="Models\FollowerModel.cs" />
+    <Compile Include="Models\FollowingModel.cs" />
+    <Compile Include="Models\PublicationModel.cs" />
+    <Compile Include="Models\ShareModel.cs" />
+    <Compile Include="Models\TagModel.cs" />
+    <Compile Include="Models\TopicModel.cs" />
     <Compile Include="Models\ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModel\ManageViewModels.cs" />
@@ -295,6 +330,33 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\main.css" />
+    <Content Include="Content\assets\css\vendor\bootstrap-toc.css" />
+    <Content Include="Content\assets\css\vendor\prism.css" />
+    <Content Include="Content\assets\img\demo\1.jpg" />
+    <Content Include="Content\assets\img\demo\3.jpg" />
+    <Content Include="Content\assets\img\demo\5.jpg" />
+    <Content Include="Content\assets\img\demo\avatar2.jpg" />
+    <Content Include="Content\assets\img\demo\blog4.jpg" />
+    <Content Include="Content\assets\img\demo\blog5.jpg" />
+    <Content Include="Content\assets\img\demo\blog6.jpg" />
+    <Content Include="Content\assets\img\demo\blog8.jpg" />
+    <Content Include="Content\assets\img\demo\home.jpg" />
+    <Content Include="Content\assets\img\demo\intro.jpg" />
+    <Content Include="Content\assets\img\demo\sal.jpg" />
+    <Content Include="Content\assets\img\demo\slide1.jpg" />
+    <Content Include="Content\assets\img\demo\slide2.jpg" />
+    <Content Include="Content\assets\img\demo\slide3.jpg" />
+    <Content Include="Content\assets\img\favicon.ico" />
+    <Content Include="Content\assets\img\screenshot-mundana-article.png" />
+    <Content Include="Content\assets\img\screenshot-mundana-category.png" />
+    <Content Include="Content\assets\img\screenshot-mundana.png" />
+    <Content Include="Content\assets\js\functions.js" />
+    <Content Include="Content\assets\js\vendor\bootstrap-toc.js" />
+    <Content Include="Content\assets\js\vendor\bootstrap.min.js" />
+    <Content Include="Content\assets\js\vendor\jquery.min.js" />
+    <Content Include="Content\assets\js\vendor\popper.min.js" />
+    <Content Include="Content\assets\js\vendor\prism.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bower_components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
@@ -7462,6 +7524,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_MasterLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -7471,6 +7534,7 @@
     <Folder Include="Areas\Author\Views\Shared\" />
     <Folder Include="Areas\Guest\Controllers\" />
     <Folder Include="Areas\Guest\Models\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
