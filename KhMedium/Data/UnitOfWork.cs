@@ -14,12 +14,34 @@ namespace KhMedium.Data
         public UnitOfWork(KhMediumEntities context)
         {
             _context = context;
-//            Courses = new CourseRepository(_context);
+            Articles = new ArticleRepository(_context);
+            ArticleTags = new ArticleTagRepository(_context);
             Authors = new AuthorRepository(_context);
+            Bookmarks = new BookmarkRepository(_context);
+            Categories = new CategoryRepository(_context);
+            Claps = new ClapRepository(_context);
+            Comments = new CommentRepository(_context);
+            Followers = new FollowerRepository(_context);
+            Followings = new FollowingRepository(_context);
+            Publications = new PublicationRepository(_context);
+            Shares = new ShareRepository(_context);
+            Tags = new TagRepository(_context);
+            Topics = new TopicRepository(_context);
         }
 
-//        public ICourseRepository Courses { get; private set; }
-        public IAuthorRepository Authors { get; private set; }
+        public IArticleRepository Articles { get; }
+        public IArticleTagRepository ArticleTags { get; }
+        public IAuthorRepository Authors { get; }
+        public IBookmarkRepository Bookmarks { get; }
+        public ICategoryRepository Categories { get; }
+        public IClapRepository Claps { get; }
+        public ICommentRepository Comments { get; }
+        public IFollowerRepository Followers { get; }
+        public IFollowingRepository Followings { get; }
+        public IPublicationRepository Publications { get; }
+        public IShareRepository Shares { get; }
+        public ITagRepository Tags { get; }
+        public ITopicRepository Topics { get; }
 
         public int Complete()
         {

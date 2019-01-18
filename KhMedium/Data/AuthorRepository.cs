@@ -19,7 +19,7 @@ namespace KhMedium.Data
         {
             return AutoMapper.Mapper.Map<Models.AuthorModel>(KhMediumContext.Authors.SingleOrDefault(a => a.Id == id));
         }
-
+        
         public KhMediumEntities KhMediumContext => Context as KhMediumEntities;
     }
 }

@@ -13,6 +13,8 @@ namespace KhMedium.Controllers
 {
     public class HomeController : Controller
     {
+        UnitOfWork _context = new UnitOfWork(new KhMediumEntities());
+
         public ActionResult Index()
         {
             return View();
@@ -20,13 +22,8 @@ namespace KhMedium.Controllers
 
         public ActionResult About()
         {
-            var unitOfWork = new UnitOfWork(new KhMediumEntities());
-            ViewBag.Message = "Your application description page.";
 
-            var context =new KhMediumEntities();
-            var dbAuthor = context.Authors.Find("wwe");
-            var author = Mapper.Map<Models.AuthorModel>(dbAuthor);
-            return View(author);
+            return View();
         }
 
         public ActionResult Contact()

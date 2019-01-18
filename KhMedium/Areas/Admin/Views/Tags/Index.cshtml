@@ -1,0 +1,22 @@
+﻿@using System.Security.Cryptography
+@model IEnumerable<KhMedium.Models.TagModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    @foreach (var tag in Model)
+    {
+        <h1>@tag.Name</h1>
+    }
+</div>
+</body>
+</html>
